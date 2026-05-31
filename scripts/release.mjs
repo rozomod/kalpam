@@ -12,10 +12,10 @@ if (execFileSync('git', ['status', '--porcelain'], { cwd: root }).toString().tri
   process.exit(1);
 }
 sh('node', ['scripts/set-version.mjs', version]);
-sh('pnpm', ['-r', 'run', 'build', '--if-present']);
+sh('pnpm', ['-r', 'run', 'build']);
 // Order: commit → tag → publish → push. If publish fails, delete the local tag (git tag -d vX.Y.Z) and reset the commit (git reset HEAD~1) before retrying.
 sh('git', ['commit', '-am', `chore(release): v${version} [skip ci]`]);
-sh('git', ['tag', `v${version}`]);
+sh('git', ['tag', '-a', `v${version}`, '-m', `v${version}`]);
 sh('node', ['scripts/publish-all.mjs']);
 sh('git', ['push', '--follow-tags']);
 console.log(`Released v${version}.`);

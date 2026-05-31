@@ -19,5 +19,5 @@ jobs:
       - run: npm install -g npm@latest # >= 11.5.1 for OIDC
       - run: pnpm install --frozen-lockfile
       - run: node scripts/set-version.mjs "${GITHUB_REF_NAME#v}"
-      - run: pnpm -r run build --if-present
+      - run: pnpm -r run build
       - run: node scripts/publish-all.mjs
