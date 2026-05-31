@@ -1,0 +1,7 @@
+packages:
+  - 'packages/*'
+
+# pnpm 11 postinstall build allowlist
+allowBuilds:
+  esbuild: true
+  lefthook: true

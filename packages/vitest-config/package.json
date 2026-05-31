@@ -1,0 +1,45 @@
+{
+  "name": "@kalpam/vitest-config",
+  "version": "0.0.0",
+  "description": "Shared Vitest base config for kalpam projects.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozomod/kalpam.git",
+    "directory": "packages/vitest-config"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check-types": "tsc --noEmit -p tsconfig.json",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@kalpam/tsconfig": "workspace:*",
+    "typescript": "5.9.2",
+    "vitest": "^4.1.7"
+  },
+  "peerDependencies": {
+    "vitest": ">=4.0.0"
+  }
+}
