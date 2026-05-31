@@ -1,6 +1,6 @@
 {
   "name": "@kalpam/vitest-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared Vitest base config for kalpam projects.",
   "license": "MIT",
   "repository": {

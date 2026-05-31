@@ -1,6 +1,6 @@
 {
   "name": "@kalpam/semantic-release-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared semantic-release config for kalpam app presets (no npm publish).",
   "license": "MIT",
   "repository": {
